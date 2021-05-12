@@ -1,0 +1,70 @@
+---
+title: "Week4_Assignment"
+author: KS
+date: 5/3/2021
+output:
+  slidy_presentation: default
+  ioslides_presentation:
+  beamer_presentation: default
+always_allow_html: yes
+---
+
+## Introduction 
+
+This data set contains statistics, in arrests per 100,000 residents for assault, murder, and rape in each of the 50 US states in 1973. Also given is the percent of the population living in urban areas.
+A data frame with 50 observations on 4 variables.
+
+[,1]	Murder	numeric	Murder arrests (per 100,000)
+[,2]	Assault	numeric	Assault arrests (per 100,000)
+[,3]	UrbanPop	numeric	Percent urban population
+[,4]	Rape	numeric	Rape arrests (per 100,000)
+
+
+## Shiny Web Application 
+
+<div class="blue2">
+* The Shiny Web Application developed by using USArrests Dataset from inbuilt R package.
+* The developed shiny App has 2 parts, a drop down box on left panel and main panel is on the right
+* The Crime drop down box facilitates the user to choose 3 different crime rates in USA 1973
+* Based on the selection in the drop down menu, it is possible to see the associated data,map,regression diagnostics on the tabs in the main panel.
+</div>
+
+Screenshots of the Server.R file 
+
+![Alt text](/Users/kavis/Pictures/Saved Pictures/ServerR.jpg)
+
+
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(USArrests)
+
+require(graphics)
+pairs(USArrests, panel = panel.smooth, main = "USArrests data")
+
+## Difference between 'USArrests' and its correction
+USArrests["Maryland", "UrbanPop"] # 67 -- the transcription error
+UA.C <- USArrests
+UA.C["Maryland", "UrbanPop"] <- 76.6
+
+## also +/- 0.5 to restore the original  <n>.5  percentages
+s5u <- c("Colorado", "Florida", "Mississippi", "Wyoming")
+s5d <- c("Nebraska", "Pennsylvania")
+UA.C[s5u, "UrbanPop"] <- UA.C[s5u, "UrbanPop"] + 0.5
+UA.C[s5d, "UrbanPop"] <- UA.C[s5d, "UrbanPop"] - 0.5
+
+
+```
+
+
+
+## Links
+
+Follow the links for 
+* Shiny app viewer in ShinyIO.
+https://ks21.shinyapps.io/myApp/
+
+* The code can be found at
+
+
