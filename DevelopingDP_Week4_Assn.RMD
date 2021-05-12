@@ -1,7 +1,7 @@
 ---
 title: "Week4_Assignment"
 author: KS
-date: 5/3/2021
+date: 5/12/2021
 output:
   slidy_presentation: default
   ioslides_presentation:
@@ -62,9 +62,14 @@ UA.C[s5d, "UrbanPop"] <- UA.C[s5d, "UrbanPop"] - 0.5
 ## Links
 
 Follow the links for 
+
 * Shiny app viewer in ShinyIO.
 https://ks21.shinyapps.io/myApp/
 
 * The code can be found at
+https://github.com/kavishant87/DevelopingDP_Week4Assn
+
+* The Presentation can be found at
+https://rpubs.com/KaviS/DevelopingDP4
 
 
